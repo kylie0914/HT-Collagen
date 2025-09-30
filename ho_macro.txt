@@ -1,0 +1,18 @@
+img1 = getTitle();
+run("Duplicate...", " ");
+img2 = getTitle();
+
+run("Subtract Background...", "rolling=10");
+setAutoThreshold("Default dark");
+//run("Threshold...");
+setThreshold(11, 65535);
+run("Convert to Mask");
+run("Invert");
+
+imageCalculator("Subtract create", img1, img2);
+
+setAutoThreshold("Default dark");
+//run("Threshold…");
+setThreshold(13285, 65535);
+run("Convert to Mask");
+run("Invert");

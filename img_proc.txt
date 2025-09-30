@@ -1,0 +1,94 @@
+'''
+    24.12.19 Image processing
+
+    [To do]
+    - Make a class for imageJ macro files
+    - make GUI to check each process
+        - rolling size (text enter, default = 10)
+        - threshold number s
+
+
+    - 전체 UI 초안 작성 시작  Image processing - Phase correction - Area FractionDiff results - PIVLAB
+
+img1 = getTitle();
+run(Duplicate...,  );
+img2 = getTitle();
+
+run(Subtract Background..., rolling=10);
+setAutoThreshold(Default dark);
+run(Threshold...);
+setThreshold(11, 65535);
+run(Convert to Mask);
+run(Invert);
+
+imageCalculator(Subtract create, img1, img2);
+
+setAutoThreshold(Default dark);
+run(Threshold…);
+setThreshold(13285, 65535);
+run(Convert to Mask);
+run(Invert);
+
+'''
+
+import numpy as np
+import sys,os
+
+import imagej  # conda install conda-forgepyimagej
+
+
+ij = imagej.init()
+print(ij.getVersion())
+
+
+
+# Java 설치 경로를 명시적으로 지정
+java_options = [
+    --add-modules=ALL-SYSTEM,
+    f--module-path={os.path.join(os.environ['JAVA_HOME'], 'lib')}
+]
+# ij = imagej.init('sc.fijifiji', java_options=java_options)  # Make sure you have Fiji installed
+
+if __name__ == __main__
+    # Initialize ImageJ
+    ij = imagej.init('sc.fijifiji',  java_options=java_options)  # Make sure you have Fiji installed
+
+    # Load the initial image
+    folder_name = 240529_tif
+    img_path = .resourcesdataraw + folder_name
+    img1_filename = 240520.175204.DFB.032.DFB.A1.T032P05_HT3D_0.tiff
+    img1 = ij.io().open(os.path.join(img_path, img1_filename))
+    ij.ui().show(Original Image, img1)
+
+    # # Duplicate the image
+    # img2 = img1.duplicate()
+    #
+    # # Step 1 Subtract Background
+    # bg_subtracted = ij.op().run(subtractBackground, img2, 10)  # Rolling ball radius of 10
+    # ij.ui().show(Background Subtracted, bg_subtracted)
+    #
+    # # Step 2 Apply Threshold
+    # threshold_mask1 = ij.op().run(threshold.otsu, bg_subtracted)
+    # ij.ui().show(Threshold Mask 1, threshold_mask1)
+    #
+    # # Step 3 Invert the Image
+    # inverted1 = ij.op().run(invert, threshold_mask1)
+    # ij.ui().show(Inverted Mask 1, inverted1)
+    #
+    # # Step 4 Image Subtraction
+    # subtracted_image = ij.op().run(imageCalculator, img1, bg_subtracted, Subtract)
+    # ij.ui().show(Subtracted Image, subtracted_image)
+    #
+    # # Step 5 Apply Threshold Again
+    # threshold_mask2 = ij.op().run(threshold.manual, subtracted_image, 13285, 65535)  # Adjust thresholds as needed
+    # ij.ui().show(Threshold Mask 2, threshold_mask2)
+    #
+    # # Step 6 Invert Again
+    # inverted2 = ij.op().run(invert, threshold_mask2)
+    # ij.ui().show(Inverted Mask 2, inverted2)
+    #
+    # # Save the final result (optional)
+    # output_path = .resourcesdataimg_proc + folder_name # Replace with your output path
+    # savefile_name = img1_filename + _imgProc.tiff
+    # ij.io().save(inverted2, os.path.join(output_path, savefile_name))
+

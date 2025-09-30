@@ -1,0 +1,349 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa959b64f9, pid=4008, tid=4068
+#
+# JRE version:  (11.0.13+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.13+7-b1751.21, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# C  0x00007ffa959b64f9
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.awt.headless=true 
+
+Host: Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz, 8 cores, 31G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+Time: Tue Dec 31 19:36:16 2024 동부 표준시 elapsed time: 0.085240 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ea0705c800):  JavaThread "Unknown thread" [_thread_in_vm, id=4068, stack(0x000000100ae00000,0x000000100aff0000)]
+
+Stack: [0x000000100ae00000,0x000000100aff0000],  sp=0x000000100afee0f0,  free space=1976k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x00007ffa959b64f9
+C  0x00007ffa959b4821
+C  0x00007ffa95b466ab
+C  0x00007ffa95f3a9ce
+C  0x00007ffa95bb47d3
+C  0x00007ffa95bb6d21
+C  [_jpype.cp38-win_amd64.pyd+0x1088b]
+C  [_jpype.cp38-win_amd64.pyd+0x3b164]
+C  [python38.dll+0x127002]  cfunction_call_varargs+0xe2  (call.c:758)
+C  [python38.dll+0x125f56]  _PyObject_MakeTpCall+0x106  (call.c:160)
+C  [python38.dll+0x2038e8]  call_function+0xa8  (ceval.c:4969)
+C  [python38.dll+0x200461]  _PyEval_EvalFrameDefault+0x3441  (ceval.c:3471)
+C  [python38.dll+0x202509]  _PyEval_EvalCodeWithName+0xa89  (ceval.c:4298)
+C  [python38.dll+0x12671f]  _PyFunction_Vectorcall+0x14f  (call.c:436)
+C  [python38.dll+0x12609e]  PyVectorcall_Call+0xce  (call.c:200)
+C  [python38.dll+0x203b81]  do_call_core+0x241  (ceval.c:5010)
+C  [python38.dll+0x2005a1]  _PyEval_EvalFrameDefault+0x3581  (ceval.c:3560)
+C  [python38.dll+0x1262c5]  function_code_fastcall+0x85  (call.c:286)
+C  [python38.dll+0x126676]  _PyFunction_Vectorcall+0xa6  (call.c:418)
+C  [python38.dll+0x2038c3]  call_function+0x83  (ceval.c:4963)
+C  [python38.dll+0x200461]  _PyEval_EvalFrameDefault+0x3441  (ceval.c:3471)
+C  [python38.dll+0x202509]  _PyEval_EvalCodeWithName+0xa89  (ceval.c:4298)
+C  [python38.dll+0x12671f]  _PyFunction_Vectorcall+0x14f  (call.c:436)
+C  [python38.dll+0x2038c3]  call_function+0x83  (ceval.c:4963)
+C  [python38.dll+0x1fe26c]  _PyEval_EvalFrameDefault+0x124c  (ceval.c:3501)
+C  [python38.dll+0x1262c5]  function_code_fastcall+0x85  (call.c:286)
+C  [python38.dll+0x126676]  _PyFunction_Vectorcall+0xa6  (call.c:418)
+C  [python38.dll+0x2038c3]  call_function+0x83  (ceval.c:4963)
+C  [python38.dll+0x200461]  _PyEval_EvalFrameDefault+0x3441  (ceval.c:3471)
+C  [python38.dll+0x202509]  _PyEval_EvalCodeWithName+0xa89  (ceval.c:4298)
+C  [python38.dll+0x2711bf]  run_eval_code_obj+0x13f  (pythonrun.c:1166)
+C  [python38.dll+0x2712b1]  run_mod+0x81  (pythonrun.c:1189)
+C  [python38.dll+0x270d98]  pyrun_file+0xa8  (pythonrun.c:1085)
+C  [python38.dll+0x26f011]  pyrun_simple_file+0x311  (pythonrun.c:439)
+C  [python38.dll+0x26f1e0]  PyRun_SimpleFileExFlags+0x60  (pythonrun.c:473)
+C  [python38.dll+0x972cd]  pymain_run_file+0x2dd  (main.c:389)
+C  [python38.dll+0x97f40]  pymain_run_python+0x4c0  (main.c:615)
+C  [python38.dll+0x98dc3]  pymain_main+0x53  (main.c:1089)
+C  [python38.dll+0x98e36]  Py_Main+0x26  (main.c:1102)
+C  [python.exe+0x14f8]  __scrt_common_main_seh+0x10c  (exe_common.inl:288)
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000000000000
+
+
+Registers:
+RAX=0x000070d79d000398, RBX=0x0000000000000000, RCX=0x0000000000000000, RDX=0x0000000000000000
+RSP=0x000000100afee0f0, RBP=0x0000000000000000, RSI=0x000001ea0705c800, RDI=0x000000100afee4c8
+R8 =0x0000000000000000, R9 =0x00007ffa9730cbfc, R10=0x000001ea00278a00, R11=0x000000100afed7b0
+R12=0x0000000000000001, R13=0x000001ea03c2fc20, R14=0x000001ea03874cd8, R15=0x00007ffa95d9ef60
+RIP=0x00007ffa959b64f9, EFLAGS=0x0000000000010256
+
+Top of Stack: (sp=0x000000100afee0f0)
+0x000000100afee0f0:   0000000000000038 00007ffa95dc4551
+0x000000100afee100:   0000000000000000 00007ffa959635ce
+0x000000100afee110:   0000000000000000 0000000000000000
+0x000000100afee120:   000001ea07054ec0 00007ffa95dc4915
+0x000000100afee130:   000001ea0705c800 000000100afee170
+0x000000100afee140:   000001ea0278df80 00007ffa95dc4297
+0x000000100afee150:   0000000000000000 00007ffa95e1b029
+0x000000100afee160:   000000017fc5c1bc 000001ea07054ec0
+0x000000100afee170:   0000000000000000 0000000000000000
+0x000000100afee180:   0000000000000004 00007ffa95e1b5fd
+0x000000100afee190:   000070d79d000398 00007ffa96061eb0
+0x000000100afee1a0:   0000000000000004 000001ea03c2fc20
+0x000000100afee1b0:   000001ea0705c800 000000100afee200
+0x000000100afee1c0:   0000000000000000 00007ffa959b4821
+0x000000100afee1d0:   0000000000000000 000000100afee200
+0x000000100afee1e0:   0000000000000000 000000100afee4c8 
+
+Instructions: (pc=0x00007ffa959b64f9)
+0x00007ffa959b63f9:   c8 49 03 d6 4c 63 c7 48 8b f0 ff 15 77 34 5f 00
+0x00007ffa959b6409:   48 8b cb 41 b1 01 48 2b 8c 24 90 00 00 00 45 33
+0x00007ffa959b6419:   c0 33 d2 c6 04 31 00 48 8b ce e8 98 09 00 00 42
+0x00007ffa959b6429:   80 3c 33 3b 4a 8d 3c 33 75 1d 0f 1f 40 00 66 0f
+0x00007ffa959b6439:   1f 84 00 00 00 00 00 48 ff c3 ff c5 42 80 3c 33
+0x00007ffa959b6449:   3b 4a 8d 3c 33 74 f0 49 83 3c 24 00 74 18 48 8b
+0x00007ffa959b6459:   94 24 98 00 00 00 49 8b cf e8 29 b9 ee ff 49 8b
+0x00007ffa959b6469:   cc e8 d1 b7 ee ff 48 8b 44 24 20 48 8d 4c 24 30
+0x00007ffa959b6479:   49 89 47 18 48 8b 44 24 28 49 89 47 20 4d 89 67
+0x00007ffa959b6489:   10 e8 11 85 0f 00 44 8b ed 48 89 9c 24 90 00 00
+0x00007ffa959b6499:   00 48 3b 5c 24 38 0f 8c d3 fe ff ff 4c 8b 7c 24
+0x00007ffa959b64a9:   40 4c 8b 64 24 48 48 8b 7c 24 50 48 8b 74 24 58
+0x00007ffa959b64b9:   48 8b 9c 24 80 00 00 00 48 83 c4 60 41 5e 41 5d
+0x00007ffa959b64c9:   5d c3 cc cc cc cc cc 40 53 55 56 41 55 48 81 ec
+0x00007ffa959b64d9:   b8 00 00 00 48 8b 05 8c cb 88 00 48 33 c4 48 89
+0x00007ffa959b64e9:   84 24 a0 00 00 00 48 8b e9 48 83 cb ff 48 ff c3
+0x00007ffa959b64f9:   80 3c 0b 00 75 f7 33 f6 c6 44 24 30 01 40 38 35
+0x00007ffa959b6509:   24 fa 8b 00 74 17 40 38 35 9b 60 8b 00 75 0e 33
+0x00007ffa959b6519:   d2 48 8d 0d df b1 6a 00 e8 8a 9a 1a 00 45 33 ed
+0x00007ffa959b6529:   85 db 0f 8e 1b 02 00 00 48 89 bc 24 e8 00 00 00
+0x00007ffa959b6539:   48 8b fd 4c 89 a4 24 f0 00 00 00 48 63 c3 33 db
+0x00007ffa959b6549:   4c 89 b4 24 f8 00 00 00 4c 89 bc 24 b0 00 00 00
+0x00007ffa959b6559:   48 89 44 24 68 48 89 74 24 40 0f b6 07 84 c0 74
+0x00007ffa959b6569:   18 66 0f 1f 44 00 00 3c 3b 74 0e 0f b6 44 2b 01
+0x00007ffa959b6579:   48 ff c3 ff c6 84 c0 75 ee 48 8d 54 24 38 48 c7
+0x00007ffa959b6589:   44 24 38 00 00 00 00 48 8d 4c 24 60 e8 86 83 0f
+0x00007ffa959b6599:   00 48 8b 44 24 38 8b fe 41 2b fd 33 d2 4c 8b b0
+0x00007ffa959b65a9:   78 02 00 00 49 8b 46 18 4d 8b 66 10 48 89 44 24
+0x00007ffa959b65b9:   50 49 8b 46 20 48 89 44 24 58 49 8b 46 28 48 89
+0x00007ffa959b65c9:   44 24 48 8d 47 01 48 63 c8 e8 19 aa 49 00 49 63
+0x00007ffa959b65d9:   d5 48 8b c8 48 03 d5 4c 63 c7 4c 8b f8 ff 15 94
+0x00007ffa959b65e9:   32 5f 00 48 8b cb 48 2b 4c 24 40 80 7c 24 30 00 
+
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001ea034eaf30, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000001ea0705c800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4068, stack(0x000000100ae00000,0x000000100aff0000)]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+
+[error occurred during error reporting (printing compressed oops mode), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa95f57b87]
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.014 Loaded shared library C:\Users\momoc\miniconda3\envs\ho\Library\bin\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff66be50000 - 0x00007ff66be6c000 	C:\Users\momoc\miniconda3\envs\ho\python.exe
+0x00007ffb48990000 - 0x00007ffb48b88000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffb471e0000 - 0x00007ffb472a2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffb466b0000 - 0x00007ffb469ae000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffb3f490000 - 0x00007ffb3f524000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffafe430000 - 0x00007ffafe8c6000 	C:\WINDOWS\SYSTEM32\AcLayers.DLL
+0x00007ffb47810000 - 0x00007ffb478ae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffb473e0000 - 0x00007ffb4757d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffb46390000 - 0x00007ffb463b2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffb48530000 - 0x00007ffb4855b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffb46270000 - 0x00007ffb46387000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffb463c0000 - 0x00007ffb4645d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffb46460000 - 0x00007ffb46560000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffb479c0000 - 0x00007ffb4812d000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffb47180000 - 0x00007ffb471d5000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ffb48150000 - 0x00007ffb48201000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffb47920000 - 0x00007ffb479bf000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffb47650000 - 0x00007ffb47773000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffb465d0000 - 0x00007ffb465f7000 	C:\WINDOWS\System32\bcrypt.dll
+0x000001ea00260000 - 0x000001ea00263000 	C:\WINDOWS\SYSTEM32\sfc.dll
+0x00007ffb32b80000 - 0x00007ffb32c24000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x00007ffb469b0000 - 0x00007ffb46d03000 	C:\WINDOWS\System32\combase.dll
+0x00007ffb48330000 - 0x00007ffb483dd000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffb09c00000 - 0x00007ffb09c12000 	C:\WINDOWS\SYSTEM32\sfc_os.DLL
+0x00007ffb41290000 - 0x00007ffb412a1000 	C:\WINDOWS\SYSTEM32\SortWindows61.dll
+0x00007ffb477e0000 - 0x00007ffb4780f000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffb41030000 - 0x00007ffb4104b000 	C:\Users\momoc\miniconda3\envs\ho\VCRUNTIME140.dll
+0x00007ffaa0b70000 - 0x00007ffaa1045000 	C:\Users\momoc\miniconda3\envs\ho\python38.dll
+0x00007ffb483e0000 - 0x00007ffb4844b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffb3d090000 - 0x00007ffb3d09a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffb459b0000 - 0x00007ffb459c8000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ffb45070000 - 0x00007ffb450a4000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ffb459d0000 - 0x00007ffb459dc000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ffb46080000 - 0x00007ffb46102000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffb41010000 - 0x00007ffb4101f000 	C:\Users\momoc\miniconda3\envs\ho\python3.DLL
+0x00007ffb40fe0000 - 0x00007ffb41004000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_ctypes.pyd
+0x00007ffb48800000 - 0x00007ffb4892b000 	C:\WINDOWS\System32\ole32.dll
+0x00007ffb47580000 - 0x00007ffb4764d000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffb40fd0000 - 0x00007ffb40fdb000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\libffi-7.dll
+0x00007ffb40fc0000 - 0x00007ffb40fc7000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\mkl\_mklinit.cp38-win_amd64.pyd
+0x00007ffa9e7e0000 - 0x00007ffaa073c000 	C:\Users\momoc\miniconda3\envs\ho\Library\bin\mkl_rt.2.dll
+0x00007ffb40fa0000 - 0x00007ffb40fba000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\mkl\_py_mkl_service.cp38-win_amd64.pyd
+0x00007ffb05140000 - 0x00007ffb054a6000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\core\_multiarray_umath.cp38-win_amd64.pyd
+0x00007ffb40f70000 - 0x00007ffb40f91000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\core\_multiarray_tests.cp38-win_amd64.pyd
+0x00007ffb40f40000 - 0x00007ffb40f6e000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\linalg\_umath_linalg.cp38-win_amd64.pyd
+0x00007ffb3f530000 - 0x00007ffb3f551000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\fft\_pocketfft_internal.cp38-win_amd64.pyd
+0x00007ffb25720000 - 0x00007ffb257b7000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\mtrand.cp38-win_amd64.pyd
+0x00007ffb3c6a0000 - 0x00007ffb3c6cb000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\bit_generator.cp38-win_amd64.pyd
+0x00007ffb25a00000 - 0x00007ffb25a34000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_common.cp38-win_amd64.pyd
+0x00007ffb40f00000 - 0x00007ffb40f0c000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_hashlib.pyd
+0x00007ffa9e2c0000 - 0x00007ffa9e7d1000 	C:\Users\momoc\miniconda3\envs\ho\Library\bin\libcrypto-3-x64.dll
+0x00007ffb46110000 - 0x00007ffb4626c000 	C:\WINDOWS\System32\CRYPT32.dll
+0x00007ffb256d0000 - 0x00007ffb25713000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_bounded_integers.cp38-win_amd64.pyd
+0x00007ffb3ff80000 - 0x00007ffb3ff99000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_mt19937.cp38-win_amd64.pyd
+0x00007ffb3ff20000 - 0x00007ffb3ff37000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_philox.cp38-win_amd64.pyd
+0x00007ffb3c110000 - 0x00007ffb3c12a000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_pcg64.cp38-win_amd64.pyd
+0x00007ffb259e0000 - 0x00007ffb259f2000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_sfc64.cp38-win_amd64.pyd
+0x00007ffb075f0000 - 0x00007ffb076a3000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random\_generator.cp38-win_amd64.pyd
+0x00007ffa9ae90000 - 0x00007ffa9e2b9000 	C:\Users\momoc\miniconda3\envs\ho\Library\bin\mkl_intel_thread.2.dll
+0x00007ffa79290000 - 0x00007ffa7dd83000 	C:\Users\momoc\miniconda3\envs\ho\Library\bin\mkl_core.2.dll
+0x00007ffa98500000 - 0x00007ffa9ae8a000 	C:\Users\momoc\miniconda3\envs\ho\Library\bin\mkl_avx2.2.dll
+0x00007ffa97610000 - 0x00007ffa984f3000 	C:\Users\momoc\miniconda3\envs\ho\Library\bin\mkl_vml_avx2.2.dll
+0x00007ffb14670000 - 0x00007ffb146ec000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\_jpype.cp38-win_amd64.pyd
+0x00007ffb07810000 - 0x00007ffb0789d000 	C:\Users\momoc\miniconda3\envs\ho\MSVCP140.dll
+0x00007ffb3ffe0000 - 0x00007ffb3ffec000 	C:\Users\momoc\miniconda3\envs\ho\VCRUNTIME140_1.dll
+0x00007ffb25620000 - 0x00007ffb2566b000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_decimal.pyd
+0x00007ffb25450000 - 0x00007ffb25468000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_bz2.pyd
+0x00007ffb25420000 - 0x00007ffb25450000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_lzma.pyd
+0x00007ffb19fc0000 - 0x00007ffb19fd7000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_socket.pyd
+0x00007ffb45450000 - 0x00007ffb4548b000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ffb3ff00000 - 0x00007ffb3ff09000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\select.pyd
+0x00007ffb15830000 - 0x00007ffb15845000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\psutil\_psutil_windows.cp38-win_amd64.pyd
+0x00007ffb48140000 - 0x00007ffb48148000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffb455c0000 - 0x00007ffb4560b000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffb2e0a0000 - 0x00007ffb2e0f1000 	C:\WINDOWS\SYSTEM32\pdh.dll
+0x00007ffb45430000 - 0x00007ffb45442000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffb40560000 - 0x00007ffb40574000 	C:\WINDOWS\SYSTEM32\wtsapi32.dll
+0x00007ffb055d0000 - 0x00007ffb056b8000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\interval.cp38-win_amd64.pyd
+0x00007ffb04b70000 - 0x00007ffb04cbf000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\hashtable.cp38-win_amd64.pyd
+0x00007ffb14920000 - 0x00007ffb14947000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\missing.cp38-win_amd64.pyd
+0x00007ffb14890000 - 0x00007ffb148ae000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\dtypes.cp38-win_amd64.pyd
+0x00007ffb14870000 - 0x00007ffb1488b000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\np_datetime.cp38-win_amd64.pyd
+0x00007ffb0a290000 - 0x00007ffb0a2bc000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\conversion.cp38-win_amd64.pyd
+0x00007ffb3c100000 - 0x00007ffb3c10d000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\base.cp38-win_amd64.pyd
+0x00007ffb07540000 - 0x00007ffb075e5000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\offsets.cp38-win_amd64.pyd
+0x00007ffb09d90000 - 0x00007ffb09df7000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\timestamps.cp38-win_amd64.pyd
+0x00007ffb0a230000 - 0x00007ffb0a25f000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\nattype.cp38-win_amd64.pyd
+0x00007ffb06590000 - 0x00007ffb065f7000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\timedeltas.cp38-win_amd64.pyd
+0x00007ffb068f0000 - 0x00007ffb0691e000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\timezones.cp38-win_amd64.pyd
+0x000001ea05160000 - 0x000001ea05163000 	C:\WINDOWS\SYSTEM32\tzres.dll
+0x00007ffb06550000 - 0x00007ffb0658b000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\fields.cp38-win_amd64.pyd
+0x00007ffb259d0000 - 0x00007ffb259e0000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\ccalendar.cp38-win_amd64.pyd
+0x00007ffb05cc0000 - 0x00007ffb05cf6000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\tzconversion.cp38-win_amd64.pyd
+0x00007ffb077f0000 - 0x00007ffb07801000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\properties.cp38-win_amd64.pyd
+0x00007ffb05580000 - 0x00007ffb055c7000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\parsing.cp38-win_amd64.pyd
+0x00007ffb05c30000 - 0x00007ffb05c69000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\strptime.cp38-win_amd64.pyd
+0x00007ffb050e0000 - 0x00007ffb05132000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\period.cp38-win_amd64.pyd
+0x00007ffb068c0000 - 0x00007ffb068e8000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs\vectorized.cp38-win_amd64.pyd
+0x00007ffb25410000 - 0x00007ffb2541f000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\ops_dispatch.cp38-win_amd64.pyd
+0x00007ffabd560000 - 0x00007ffabd6d5000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\algos.cp38-win_amd64.pyd
+0x00007ffb04af0000 - 0x00007ffb04b64000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\lib.cp38-win_amd64.pyd
+0x00007ffb050b0000 - 0x00007ffb050d4000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\hashing.cp38-win_amd64.pyd
+0x00007ffb05070000 - 0x00007ffb050a5000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslib.cp38-win_amd64.pyd
+0x00007ffaa1b30000 - 0x00007ffaa1c3f000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\unicodedata.pyd
+0x00007ffb04fb0000 - 0x00007ffb04fdb000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\ops.cp38-win_amd64.pyd
+0x00007ffb04ac0000 - 0x00007ffb04ae2000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numexpr\interpreter.cp38-win_amd64.pyd
+0x00007ffb44850000 - 0x00007ffb44862000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffb04aa0000 - 0x00007ffb04ab9000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\bottleneck\move.cp38-win_amd64.pyd
+0x00007ffb14990000 - 0x00007ffb1499a000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\bottleneck\nonreduce.cp38-win_amd64.pyd
+0x00007ffb14080000 - 0x00007ffb1408f000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\bottleneck\nonreduce_axis.cp38-win_amd64.pyd
+0x00007ffb04a80000 - 0x00007ffb04a99000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\bottleneck\reduce.cp38-win_amd64.pyd
+0x00007ffb04a60000 - 0x00007ffb04a74000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\arrays.cp38-win_amd64.pyd
+0x00007ffb04910000 - 0x00007ffb049b7000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\sparse.cp38-win_amd64.pyd
+0x00007ffb13ee0000 - 0x00007ffb13eec000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\reduction.cp38-win_amd64.pyd
+0x00007ffb0b5a0000 - 0x00007ffb0b5af000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\indexing.cp38-win_amd64.pyd
+0x00007ffabd4c0000 - 0x00007ffabd551000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\index.cp38-win_amd64.pyd
+0x00007ffaa6380000 - 0x00007ffaa63be000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\internals.cp38-win_amd64.pyd
+0x00007ffaa1990000 - 0x00007ffaa1b27000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\join.cp38-win_amd64.pyd
+0x00007ffb04a30000 - 0x00007ffb04a5a000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\writers.cp38-win_amd64.pyd
+0x00007ffaa6330000 - 0x00007ffaa6378000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\window\aggregations.cp38-win_amd64.pyd
+0x00007ffb048e0000 - 0x00007ffb04902000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\window\indexers.cp38-win_amd64.pyd
+0x00007ffaa1950000 - 0x00007ffaa1984000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\reshape.cp38-win_amd64.pyd
+0x00007ffaa09d0000 - 0x00007ffaa0b6b000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\groupby.cp38-win_amd64.pyd
+0x00007ffabd4a0000 - 0x00007ffabd4b5000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\testing.cp38-win_amd64.pyd
+0x00007ffaa18f0000 - 0x00007ffaa194b000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\parsers.cp38-win_amd64.pyd
+0x00007ffab9950000 - 0x00007ffab9963000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\json.cp38-win_amd64.pyd
+0x00007ffb0a280000 - 0x00007ffb0a289000 	C:\Users\momoc\miniconda3\envs\ho\DLLs\_queue.pyd
+0x00007ffa97560000 - 0x00007ffa97603000 	C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\PIL\_imaging.cp38-win_amd64.pyd
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\momoc\miniconda3\envs\ho;C:\WINDOWS\SYSTEM32;C:\Users\momoc\miniconda3\envs\ho\DLLs;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\mkl;C:\Users\momoc\miniconda3\envs\ho\Library\bin;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\core;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\linalg;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\fft;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numpy\random;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\psutil;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\tslibs;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\numexpr;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\bottleneck;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\pandas\_libs\window;C:\Users\momoc\miniconda3\envs\ho\lib\site-packages\PIL;C:\Users\momoc\miniconda3\envs\ho\Library\bin\bin\server;C:\Users\momoc\miniconda3\envs\ho\Library\bin\bin
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true 
+java_command: <unknown>
+java_class_path (initial): C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\adapter-rxjava2-2.9.0.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\annotations-13.0.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\ant-1.10.15.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\ant-launcher-1.10.15.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\antlr-3.5.3.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\antlr-runtime-3.5.3.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\api-0.14.0.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\asm-9.7.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\asm-analysis-9.7.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\asm-commons-9.7.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\asm-tree-9.7.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\asm-util-9.7.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\autocomplete-3.3.1.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\base-18.09.0.jar;C:\Users\momoc\.jgo\net.imagej\imagej\RELEASE\28b74e6959b0634f2a8e10c27afe06e7039fb4a0dc582d9746d028ba40e5bd04\base64-2.3.8.jar;C:\Users\momoc\.jgo
+Launcher Type: generic
+
+[Global flags]
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 536216384                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 8579462144                                {product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Users\momoc\miniconda3\envs\ho\Library
+PATH=C:\Users\momoc\miniconda3\envs\ho;C:\Users\momoc\miniconda3\envs\ho\Library\mingw-w64\bin;C:\Users\momoc\miniconda3\envs\ho\Library\usr\bin;C:\Users\momoc\miniconda3\envs\ho\Library\bin;C:\Users\momoc\miniconda3\envs\ho\Scripts;C:\Users\momoc\miniconda3\envs\ho\bin;C:\Users\momoc\miniconda3\condabin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Oculus\Support\oculus-runtime;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;C:\Program Files\Microsoft SQL Server\120\DTS\Binn;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Program Files\Bandizip;C:\Program Files\Android\Android Studio\jbr\bin;C:\Users\momoc\AppData\Local\Android\Sdk\platform-tools;C:\Users\momoc\miniconda3;C:\Users\momoc\miniconda3\Library\mingw-w64\bin;C:\Users\momoc\miniconda3\Library\usr\bin;C:\Users\momoc\miniconda3\Library\bin;C:\Users\momoc\miniconda3\Scripts;C:\Users\momoc\AppData\Local\Microsoft\WindowsApps;C:\Users\momoc\.dotnet\tools;C:\Program Files\JetBrains\PyCharm Community Edition 2024.1.4\bin;.;C:\Users\momoc\AppData\Local\Programs\Microsoft VS Code\bin;C:\platform-tools-latest\platform-tools;C:\Users\momoc\fiji-win64\Fiji.app\java\win64\zulu8.60.0.21-ca-fx-jdk8.0.322-win_x64\jre\bin;.;C:\Users\momoc\Miniconda3\Library\Bin
+USERNAME=momoc
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+OS uptime: 0 days 0:10 hours
+
+CPU:total 8 (initial active 8) 
+
+Memory: 4k page, system-wide physical 32728M (21152M free)
+TotalPageFile size 37592M (AvailPageFile size 23914M)
+current process WorkingSet (physical memory assigned to process): 113M, peak: 113M
+current process commit charge ("private bytes"): 98M, peak: 98M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.13+7-b1751.21) for windows-amd64 JRE (11.0.13+7-b1751.21), built on Nov 30 2021 02:32:50 by "" with MS VC++ 14.0 (VS2015)
+
+END.
