@@ -10,46 +10,24 @@
 4. **PIVlab** — launch an external PIVlab installation for optical-flow analysis.
 5. **Animation export** — convert PNG sequences to GIF or MP4.
 
-## Project layout
+## Run
 
-```text
-HT-Collagen/
-├── src/
-│   ├── main.py
-│   ├── image_processing/
-│   ├── drift_correction/
-│   ├── density_analysis/
-│   ├── pivlab/
-│   └── utils/
-├── resources/
-├── data/
-├── archive/
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
-
-The `src/` modules currently provide organized entry points around the original root-level analysis scripts. The original scripts are intentionally retained for compatibility; no legacy scripts or user data were deleted in this cleanup.
-
-## Requirements
-
-- Python 3
-- Packages in [`requirements.txt`](requirements.txt)
-- ImageJ/Fiji and Java for the ImageJ processing step
-- PIVlab installed separately; choose its executable in the application
-
-Install Python dependencies:
+Install Python dependencies from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Run
-
-From the repository root:
+Launch the reorganized desktop GUI from the repository root:
 
 ```bash
 python -m src.main
+```
+
+The legacy command remains available:
+
+```bash
+python p0_main_v3.py
 ```
 
 Launch the PNG animation exporter separately:
@@ -58,10 +36,34 @@ Launch the PNG animation exporter separately:
 python -m src.utils.png2gif
 ```
 
-Legacy entry points remain available from the repository root, for example `python p0_main_v3.py` and `python png2gif.py`.
+ImageJ/Fiji (with Java) is required for batch preprocessing. PIVlab is an external application; select its executable when prompted.
+
+## Repository layout
+
+```text
+HT-Collagen/
+├── src/                         # Organized application entry points
+│   ├── main.py
+│   ├── image_processing/
+│   ├── drift_correction/
+│   ├── density_analysis/
+│   ├── pivlab/
+│   └── utils/
+├── resources/                   # GUI assets and bundled PIVlab files
+├── data/raw/                    # Existing sample and research data
+├── archive/                     # Reserved for reviewed historical files
+├── p0_main_v3.py                # Backward-compatible launcher
+├── p1_ImageProcessing_macro.py  # Existing ImageJ batch GUI implementation
+├── p2_drift_correction_v3IB.py  # Existing drift-correction implementation
+├── p3_density_tracking.py       # Existing density-analysis implementation
+├── p4_PIVlab.py                 # Existing PIVlab launcher implementation
+├── png2gif.py                   # Existing animation exporter implementation
+├── requirements.txt
+└── .gitignore
+```
+
+The `src/` modules provide organized entry points while the original root-level analysis implementations remain in place for backward compatibility. This cleanup does not delete or relocate research data, backups, logs, or IDE metadata. Review these items before removing them; some may already be tracked in Git.
 
 ## Data and generated files
 
-Choose microscopy input folders through the application. Processing outputs are written next to or alongside the selected input folders. Keep raw research data, generated analysis outputs, local logs, Python caches, and IDE settings out of version control unless they are deliberately being shared.
-
-Old backups, macro drafts, logs, and IDE metadata have not been deleted or moved by this change. Review those files before archiving or removing them; `.gitignore` only prevents new untracked matching files from being added and does not untrack files already committed.
+Choose microscopy input folders through the application. Processed images and analysis outputs are generally written next to or alongside the selected folder. The repository currently contains sample data and generated analysis artifacts under `data/raw/`; do not assume that directory is empty or safe to remove. Keep new raw research data and generated output out of version control unless they are intentionally being shared.

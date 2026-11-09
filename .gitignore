@@ -23,6 +23,14 @@ Thumbs.db
 *.bak
 *.orig
 
+# Common generated analysis folders
+**/imgj_proc/
+**/density_input_8bit/
+**/density_results/
+**/drift_corr/
+**/force_results/
+**/anim_exports/
+
 # Build artifacts
 build/
 dist/
