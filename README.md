@@ -1,44 +1,44 @@
 # HT-Collagen
 
-**Fiber migration analysis tool** for processing collagen microscopy image sequences, correcting drift, analyzing density, and launching PIVlab.
+**Fiber migration analysis tool** for collagen microscopy image sequences.
 
 ## Workflow
 
-1. **Image preprocessing** — batch-process images with an ImageJ macro (background subtraction and thresholding).
-2. **Drift correction** — estimate image-sequence drift with FFT-based correlation and save aligned TIFFs.
-3. **Density analysis** — generate area-fraction heatmaps and compare two images with a difference map.
-4. **PIVlab** — select and launch an external PIVlab executable for optical-flow analysis.
-5. **Animation export** — convert a sequence of PNG images to GIF and/or MP4.
+1. **Image preprocessing** — batch processing with an ImageJ macro.
+2. **Drift correction** — FFT-based alignment of TIFF sequences.
+3. **Density analysis** — area-fraction heatmaps and image-to-image difference maps.
+4. **PIVlab** — launch an external PIVlab installation for optical-flow analysis.
+5. **Animation export** — convert PNG sequences to GIF or MP4.
 
-The main application is a PyQt5 desktop GUI. Processing outputs are written alongside the selected input folders; keep large microscopy datasets and generated results out of version control unless they are intentionally part of the project.
-
-## Repository contents
+## Project layout
 
 ```text
 HT-Collagen/
-├── p0_main_v3.py                 # Main workflow GUI
-├── p1_ImageProcessing_macro.py   # ImageJ macro batch-processing GUI
-├── p2_drift_correction_v3IB.py   # TIFF drift correction
-├── p3_density_tracking.py        # Density heatmap and difference analysis
-├── p4_PIVlab.py                  # External PIVlab launcher helpers
-├── png2gif.py                    # PNG sequence to GIF / MP4 GUI
-├── resources/                    # GUI images and PIVlab resources
-├── data/raw/                     # Data directory (keep datasets local/private)
+├── src/
+│   ├── main.py
+│   ├── image_processing/
+│   ├── drift_correction/
+│   ├── density_analysis/
+│   ├── pivlab/
+│   └── utils/
+├── resources/
+├── data/
+├── archive/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 ```
 
-Legacy scripts, macro drafts, backups, and generated logs are still present at the repository root. They have not been deleted or moved in this documentation cleanup; review them before archiving or removing them.
+The `src/` modules currently provide organized entry points around the original root-level analysis scripts. The original scripts are intentionally retained for compatibility; no legacy scripts or user data were deleted in this cleanup.
 
 ## Requirements
 
 - Python 3
-- Dependencies listed in [`requirements.txt`](requirements.txt)
-- ImageJ/Fiji and a working Java installation for the ImageJ batch-processing step
-- PIVlab installed separately; the application asks you to select its executable
+- Packages in [`requirements.txt`](requirements.txt)
+- ImageJ/Fiji and Java for the ImageJ processing step
+- PIVlab installed separately; choose its executable in the application
 
-Install the Python packages:
+Install Python dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -46,22 +46,22 @@ python -m pip install -r requirements.txt
 
 ## Run
 
-Start the main GUI from the repository root:
+From the repository root:
 
 ```bash
-python p0_main_v3.py
+python -m src.main
 ```
 
-Run the PNG animation exporter separately, if needed:
+Launch the PNG animation exporter separately:
 
 ```bash
-python png2gif.py
+python -m src.utils.png2gif
 ```
 
-## Notes
+Legacy entry points remain available from the repository root, for example `python p0_main_v3.py` and `python png2gif.py`.
 
-- ImageJ/Fiji and PIVlab are external applications and are not installed by `requirements.txt`.
-- The ImageJ step writes processed images to `imgj_proc/` under the selected input folder.
-- Drift-correction and density-analysis outputs are saved relative to the selected data folder.
-- Do not commit raw microscopy data, generated results, crash logs, Python cache files, or local IDE settings unless they are intentionally being shared.
-- The repository contains backup scripts and historical files. Git history is the preferred place to preserve prior versions; inspect each file before removing it.
+## Data and generated files
+
+Choose microscopy input folders through the application. Processing outputs are written next to or alongside the selected input folders. Keep raw research data, generated analysis outputs, local logs, Python caches, and IDE settings out of version control unless they are deliberately being shared.
+
+Old backups, macro drafts, logs, and IDE metadata have not been deleted or moved by this change. Review those files before archiving or removing them; `.gitignore` only prevents new untracked matching files from being added and does not untrack files already committed.

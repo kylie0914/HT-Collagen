@@ -1,1 +1,1 @@
-"""Package marker for src."""
+"""HT-Collagen source package."""
