@@ -1,0 +1,43 @@
+# Python bytecode / generated files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary output
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Generated / analysis output
+output/
+results/
+figures/
+*.png
+*.gif
+*.mp4
+
+# Local data caches
+*.pickle
+*.pkl
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
